@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import RxCocoa
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var discriptionLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var unitLabel: UILabel!
+    
     
     
     var vm = BitCoinChartViewModel()
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
             .subscribe(onNext: { (price) in
                 self.priceLabel.text = "\(price)"
             })
+       
             
         
         

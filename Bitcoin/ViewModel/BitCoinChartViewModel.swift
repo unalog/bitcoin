@@ -10,40 +10,21 @@ import UIKit
 import RxSwift
 import SwiftyJSON
 
-class Value:Any{
-    
-    var x:Int
-    var y:Int
-    
-    init(x:Int, y:Int) {
-        
-        self.x = x
-        self.y = y
-    }
-    
+struct Chart {
+    var x:Double
+    var y:Double
 }
+
 class BitCoinChartViewModel: Any {
     
-    var description:Variable<String>
-    var status:Variable<String>
-    var name:Variable<String>
-    var unit:Variable<String>
-    var period:Variable<String>
-    var price:Variable<Double>
-    var value:Variable<Array<Value>>
-    
-    init() {
-        
-        description = Variable<String>("")
-        status = Variable<String>( "")
-        name = Variable<String>( "")
-        unit = Variable<String>("")
-        period = Variable<String>("")
-        price = Variable<Double>(0)
-        value = Variable<Array<Value>>([])
-        
-        
-    }
+    var description:Variable<String> = Variable<String>("")
+    var status:Variable<String> = Variable<String>( "")
+    var name:Variable<String> = Variable<String>( "")
+    var unit:Variable<String> = Variable<String>("")
+    var period:Variable<String> = Variable<String>("")
+    var price:Variable<Double> = Variable<Double>(0)
+    var chart:Variable<Array<Chart>> = Variable<Array<Chart>>([])
+  
     
     func loadData() {
         
@@ -59,11 +40,23 @@ class BitCoinChartViewModel: Any {
                         self.name.value = parsing["name"].stringValue
                         self.unit.value = parsing["unit"].stringValue
                         self.period.value = parsing["pariod"].stringValue
-//                        var val = parsing["value"]
-//                        
-//                        for (key,subJson):(String, JSON) in val {
-//                            //Do something you want
-//                        }
+                        
+                        var values:Array<Chart> = []
+                        
+                        let val = parsing["values"]
+
+                        for (_,subJson):(String, JSON) in val {
+                            //Do something you want
+                            
+                            let x = subJson["x"].doubleValue
+                            let y = subJson["y"].doubleValue
+                            let chart = Chart(x: x, y: y)
+                            
+                            
+                            values.append(chart)
+                        }
+                        
+                        self.chart.value.append(contentsOf: values)
                         
                     }
                 }
@@ -77,7 +70,7 @@ class BitCoinChartViewModel: Any {
                     
                     if let parsing = try? JSON(data:json){
                         
-                        print(parsing)
+                       // print(parsing)
                         
                         self.price.value = parsing["KRW"]["last"].doubleValue
                         //"KRW" : {"15m" : 494436.55, "last" : 494436.55, "buy" : 494302.27, "sell" : 494436.55,  "symbol" : "₩"},
