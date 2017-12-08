@@ -24,23 +24,19 @@ class NetworkManager: Any {
             Alamofire.request(url, parameters: parameters)
                 .responseJSON(completionHandler: { (response) in
                     
-                    var statusCode = response.response?.statusCode;
-                    
                     switch response.result{
                     case .success:
                         
-                        print("status code is: \(String(describing: statusCode))")
                         if let data = response.data{
                             observable.onNext(data)
                             observable.onCompleted()
                         }
                     case .failure(let error):
-                        statusCode = error._code
+                        print("status code is: \(error._code))")
                         observable.onError(error)
                     }
                 })
             return Disposables.create {
-                print("disposable")
             }
         })
     
@@ -56,25 +52,23 @@ class NetworkManager: Any {
             Alamofire.request(url)
                 .responseJSON(completionHandler: { (response) in
                     
-                    var statusCode = response.response?.statusCode;
-                    
                     switch response.result{
                     case .success:
                         
-                        print("status code is: \(String(describing: statusCode))")
                         if let data = response.data{
                             observable.onNext(data)
                             observable.onCompleted()
                         }
                     case .failure(let error):
-                        statusCode = error._code
+                        print("status code is: \(error._code))")
+                        
                         observable.onError(error)
                     }
                 })
             
             
             return Disposables.create {
-                print ("disposeable")
+                
             }
         })
     }

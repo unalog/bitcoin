@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B51C71C51FDA2D7C00038FB7 /* ValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C71C41FDA2D7C00038FB7 /* ValueViewController.swift */; };
+		B51C71C71FDA426400038FB7 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C71C61FDA426400038FB7 /* WalletViewController.swift */; };
+		B51C71C91FDA4F6400038FB7 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C71C81FDA4F6400038FB7 /* WalletViewModel.swift */; };
+		B51C71CB1FDA4F8000038FB7 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C71CA1FDA4F8000038FB7 /* WalletManager.swift */; };
 		B5F2B5FA1FD9294B00E647DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F2B5F91FD9294B00E647DA /* AppDelegate.swift */; };
 		B5F2B5FF1FD9294B00E647DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F2B5FD1FD9294B00E647DA /* Main.storyboard */; };
 		B5F2B6011FD9294B00E647DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F2B6001FD9294B00E647DA /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 		2E237217342574DA4B9A7823 /* Pods_Bitcoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bitcoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A61D5B4936F56DAF2715BFB /* Pods-Bitcoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bitcoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bitcoin/Pods-Bitcoin.debug.xcconfig"; sourceTree = "<group>"; };
 		B51C71C41FDA2D7C00038FB7 /* ValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueViewController.swift; sourceTree = "<group>"; };
+		B51C71C61FDA426400038FB7 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		B51C71C81FDA4F6400038FB7 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		B51C71CA1FDA4F8000038FB7 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 		B5F2B5F61FD9294B00E647DA /* Bitcoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitcoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F2B5F91FD9294B00E647DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F2B5FE1FD9294B00E647DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F2B6141FD92A8F00E647DA /* NetworkManager.swift */,
+				B51C71CA1FDA4F8000038FB7 /* WalletManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B5F2B6121FD92A7A00E647DA /* BitCoinChartViewModel.swift */,
+				B51C71C81FDA4F6400038FB7 /* WalletViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 			children = (
 				B5F2B6101FD92A1100E647DA /* ViewController.swift */,
 				B51C71C41FDA2D7C00038FB7 /* ValueViewController.swift */,
+				B51C71C61FDA426400038FB7 /* WalletViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,9 +267,12 @@
 			files = (
 				B5F2B6151FD92A8F00E647DA /* NetworkManager.swift in Sources */,
 				B51C71C51FDA2D7C00038FB7 /* ValueViewController.swift in Sources */,
+				B51C71CB1FDA4F8000038FB7 /* WalletManager.swift in Sources */,
 				B5F2B6131FD92A7A00E647DA /* BitCoinChartViewModel.swift in Sources */,
+				B51C71C91FDA4F6400038FB7 /* WalletViewModel.swift in Sources */,
 				B5F2B6111FD92A1100E647DA /* ViewController.swift in Sources */,
 				B5F2B5FA1FD9294B00E647DA /* AppDelegate.swift in Sources */,
+				B51C71C71FDA426400038FB7 /* WalletViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
